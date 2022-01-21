@@ -74,7 +74,7 @@ const ImageContainer = ({ showFilters }) => {
     <div
       className={`image-container ${
         showFilters ? "image-container-filters" : ""
-      }`}
+      }${location.pathname === "/" ? "image-container-sm" : ""}`}
     >
       {images &&
         images.map((image) => {

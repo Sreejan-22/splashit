@@ -73,7 +73,7 @@ const Navbar = ({ showFilters, setShowFilters }) => {
 
   return (
     <div className="navbar-wrapper">
-      <nav className="navbar">
+      <nav className={`navbar ${location.pathname === "/" ? "navbar-sm" : ""}`}>
         <div className="navbar-brand" onClick={() => navigate("/")}>
           <img src={unsplash} alt="" className="nav-img" />
           <div className="brand-name">Splashit</div>

@@ -13,44 +13,28 @@
   top: 1rem;
   left: 0;
   width: 100%;
-  /* height: 4rem; */
   z-index: 100;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 64px;
-  /* margin: 2rem; */
-  /* margin-top: 1rem; */
   margin-left: 1rem;
-  /* box-shadow: 0px 0px 10px gray; */
 }
 
 .navbar-brand {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* justify-self: center;
-  align-self: center; */
   grid-column: 1 /2;
   cursor: pointer;
 }
-/* .navbar * {
-  position: absolute;
-} 
-
-.nav-img,
-.brand-name {
-  top: 38px;
-} */
 
 .nav-img {
-  /* left: 50px; */
   height: 30px;
   width: 30px;
   margin-right: 0.7rem;
 }
 
 .brand-name {
-  /* left: 80px; */
   font-size: 36px;
   font-weight: 800;
 }
@@ -63,15 +47,11 @@
 }
 
 .nav-search-bar {
-  /* top: 24px;
-  left: 230px; */
   font-weight: 500;
   width: 80%;
   height: 40px;
   border: 1px solid #bdbdbd;
   outline: none;
-  /* box-sizing: border-box; */
-  /* filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1)); */
   border-radius: 20px;
   padding-left: 1.5rem;
 }
@@ -79,15 +59,12 @@
 .nav-search-icon {
   position: relative;
   left: -2.5rem;
-  /* z-index: 1; */
   color: rgb(85, 85, 85);
   cursor: pointer;
 }
 
 .nav-last-div {
   grid-column: 6 / 7;
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,8 +80,6 @@
   outline: none;
   border-radius: 20px;
   cursor: pointer;
-  /* grid-column: 2 / 3;
-  align-self: center; */
 }
 
 .filter-btn:hover {
@@ -122,7 +97,6 @@
 
 .filter-container {
   margin: 1rem 2rem 0rem 2rem;
-  /* padding-right: 1rem; */
   max-width: 100%;
   height: 180px;
   border: 1.5px solid #3db46d;
@@ -166,7 +140,6 @@
   }
 
   .nav-img {
-    /* left: 50px; */
     height: 24px;
     width: 24px;
   }
@@ -246,6 +219,12 @@
     margin-left: 2rem;
   }
 
+  .navbar-sm {
+    grid-template-columns: 1fr;
+    margin-right: 1rem;
+    width: 92%;
+  }
+
   .nav-search-bar {
     padding-left: 1rem;
     width: 100%;
@@ -283,10 +262,6 @@
 }
 
 @media screen and (max-width: 450px) {
-  /* .navbar {
-    grid-template-columns: 90px 1fr 100px;
-  } */
-
   .nav-search-bar {
     padding-left: 1rem;
   }
