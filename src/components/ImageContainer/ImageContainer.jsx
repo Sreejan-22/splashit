@@ -92,16 +92,7 @@ const ImageContainer = ({ showFilters }) => {
                 }
               }}
             >
-              <img
-                src={image.urls.small}
-                alt=""
-                className="grid-img"
-                // onClick={() => {
-                //   if (window.screen.width >= 768) {
-                //     setSelectedURL(image.urls.small);
-                //   }
-                // }}
-              />
+              <img src={image.urls.small} alt="" className="grid-img" />
             </div>
           );
         })}
