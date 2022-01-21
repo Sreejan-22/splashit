@@ -5,6 +5,7 @@
   grid-auto-rows: 300px;
   gap: 15px;
   padding-bottom: 40px;
+  overflow-x: hidden;
 }
 
 .image-container-filters {

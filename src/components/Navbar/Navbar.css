@@ -16,7 +16,7 @@
   z-index: 100;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 64px;
+  grid-auto-rows: 4rem;
   margin-left: 1rem;
 }
 
