@@ -1,37 +1,6 @@
-import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import ImageContainer from "./components/ImageContainer/ImageContainer";
-
-const Home = () => {
-  return (
-    <>
-      <Navbar />
-      <ImageContainer />
-    </>
-  );
-};
-
-const Search = () => {
-  const { pathname, search } = useLocation();
-  const [showFilters, setShowFilters] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname, search]);
-
-  return (
-    <>
-      <Navbar showFilters={showFilters} setShowFilters={setShowFilters} />
-      <ImageContainer showFilters={showFilters} />
-    </>
-  );
-};
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
