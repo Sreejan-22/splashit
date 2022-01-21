@@ -18,10 +18,9 @@ export async function fetchImages(pageNumber) {
   return data;
 }
 
-export async function searchImages(searchQuery, pageNumber) {
+export async function searchImages(searchParams, pageNumber) {
   const response = await fetch(
-    `${baseURL}/search/photos?${new URLSearchParams({
-      query: searchQuery,
+    `${baseURL}/search/photos?${searchParams}&${new URLSearchParams({
       page: pageNumber,
       per_page: 24,
     })}`,

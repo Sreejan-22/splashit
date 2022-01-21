@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import "./ImageContainer.css";
-import { fetchImages, searchImages } from "../../api/api";
-import Modal from "../Modal/Modal";
+import { fetchImages } from "../../api/api";
+import Modal from "../../components/Modal/Modal";
 import Loader from "react-loader-spinner";
+import "./Home.css";
 
-const ImageContainer = ({ showFilters }) => {
-  const location = useLocation();
+const ImageContainer = () => {
   const [images, setImages] = useState([]);
   const [selectedURL, setSelectedURL] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -23,38 +21,18 @@ const ImageContainer = ({ showFilters }) => {
   );
 
   useEffect(() => {
-    if (location.pathname.includes("/search")) {
-      setPages(1);
-    }
-  }, [location.pathname, location.search]);
-
-  useEffect(() => {
     setLoading(true);
-    if (location.pathname.includes("/search")) {
-      const searchParams = new URLSearchParams(location.search);
-      searchImages(searchParams, pages)
-        .then((res) => {
-          if (pages > 1) {
-            setImages((prevImages) => setImages([...prevImages, ...res]));
-          } else {
-            setImages(res);
-          }
-          setLoading(false);
-        })
-        .catch((err) => console.log(err));
-    } else {
-      fetchImages(pages)
-        .then((res) => {
-          if (pages > 1) {
-            setImages((prevImages) => setImages([...prevImages, ...res]));
-          } else {
-            setImages(res);
-          }
-          setLoading(false);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [pages, location.pathname, location.search]);
+    fetchImages(pages)
+      .then((res) => {
+        if (pages > 1) {
+          setImages((prevImages) => setImages([...prevImages, ...res]));
+        } else {
+          setImages(res);
+        }
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, [pages]);
 
   useEffect(() => {
     const currentElement = lastElement;
@@ -71,11 +49,7 @@ const ImageContainer = ({ showFilters }) => {
   }, [lastElement]);
 
   return (
-    <div
-      className={`image-container ${
-        showFilters ? "image-container-filters" : ""
-      }`}
-    >
+    <div className="image-container">
       {images &&
         images.map((image) => {
           return (
@@ -97,14 +71,6 @@ const ImageContainer = ({ showFilters }) => {
             </div>
           );
         })}
-      {!loading &&
-      location.pathname.includes("/search") &&
-      images &&
-      images.length === 0 ? (
-        <h1 style={{ textAlign: "center", marginTop: "4rem" }}>
-          No results found
-        </h1>
-      ) : null}
       {loading && (
         <Loader
           type="Oval"
