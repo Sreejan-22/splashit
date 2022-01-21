@@ -94,6 +94,7 @@ const Navbar = ({ showFilters, setShowFilters }) => {
             height="24px"
             className="nav-search-icon"
             color="rgb(85, 85, 85)"
+            onClick={() => search()}
           />
         </form>
         {location.pathname.includes("/search") ? (
