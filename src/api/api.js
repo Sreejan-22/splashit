@@ -1,7 +1,7 @@
 require("dotenv").config();
 
-const baseURL = "https://api.unsplash.com";
-const API_KEY = process.env.REACT_APP_PEXEL_API_KEY;
+const baseURL = process.env.REACT_APP_BASE_URL;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export async function fetchImages(pageNumber) {
   const response = await fetch(
