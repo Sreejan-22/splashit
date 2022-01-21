@@ -5,7 +5,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 export async function fetchImages(pageNumber) {
   const response = await fetch(
-    `${baseURL}/photos?page=${pageNumber}&per_page=24`,
+    `${baseURL}/collections/1528792/photos?page=${pageNumber}&per_page=24`,
     {
       method: "GET",
       headers: {
