@@ -4,6 +4,7 @@ const baseURL = process.env.REACT_APP_BASE_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export async function fetchImages(pageNumber) {
+  // Food and Drink for Winter collection photos in the landing page
   const response = await fetch(
     `${baseURL}/collections/1528792/photos?page=${pageNumber}&per_page=24`,
     {
