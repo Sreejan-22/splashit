@@ -79,20 +79,28 @@ const ImageContainer = ({ showFilters }) => {
       {images &&
         images.map((image) => {
           return (
+            // used event delegation to have only one event listener in parent instead of one event listener for every image
             <div
               className="grid-image-wrapper"
               key={image.id}
               ref={setLastElement}
+              onClick={(e) => {
+                if (e.target.tagName === "IMG") {
+                  if (window.screen.width >= 768) {
+                    setSelectedURL(e.target.src);
+                  }
+                }
+              }}
             >
               <img
                 src={image.urls.small}
                 alt=""
                 className="grid-img"
-                onClick={() => {
-                  if (window.screen.width >= 768) {
-                    setSelectedURL(image.urls.small);
-                  }
-                }}
+                // onClick={() => {
+                //   if (window.screen.width >= 768) {
+                //     setSelectedURL(image.urls.small);
+                //   }
+                // }}
               />
             </div>
           );
