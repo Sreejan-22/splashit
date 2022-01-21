@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
-import ImageContainer from "../../components/ImageContainer/ImageContainer";
+import Loader from "react-loader-spinner";
+const Images = lazy(() =>
+  import("../../components/ImageContainer/ImageContainer")
+);
 
 const Search = () => {
   const { pathname, search } = useLocation();
@@ -14,7 +17,19 @@ const Search = () => {
   return (
     <>
       <Navbar showFilters={showFilters} setShowFilters={setShowFilters} />
-      <ImageContainer showFilters={showFilters} />
+      <Suspense
+        fallback={
+          <Loader
+            type="Oval"
+            color="#3f3f3f"
+            height={50}
+            width={50}
+            style={{ textAlign: "center" }}
+          />
+        }
+      >
+        <Images showFilters={showFilters} />
+      </Suspense>
     </>
   );
 };
