@@ -40,18 +40,6 @@ const Navbar = ({ showFilters, setShowFilters }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortBy, color, orientation]);
 
-  // const search = useCallback(
-  //   (e) => {
-  //     if (e) e.preventDefault();
-  //     if (input.length > 0) {
-  //       const searchParams = getSearchParams(input, sortBy, color, orientation);
-  //       navigate(`/search?${searchParams}`);
-  //     }
-  //   },
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   [sortBy, color, orientation]
-  // );
-
   const isSortBySelected = (val) => {
     return sortBy === val;
   };
@@ -88,7 +76,7 @@ const Navbar = ({ showFilters, setShowFilters }) => {
       <nav className="navbar">
         <div className="navbar-brand" onClick={() => navigate("/")}>
           <img src={unsplash} alt="" className="nav-img" />
-          <div className="brand-name">Pixdeck</div>
+          <div className="brand-name">Splashit</div>
         </div>
         <form className="nav-search-wrapper" onSubmit={search}>
           <input
