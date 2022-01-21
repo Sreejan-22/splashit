@@ -92,11 +92,9 @@ const Navbar = ({ showFilters, setShowFilters }) => {
         </form>
         {location.pathname.includes("/search") ? (
           <div className="nav-last-div">
-            <button
-              className="add-photo-btn"
-              onClick={() => setShowFilters(true)}
-            >
-              Filters
+            <button className="filter-btn" onClick={() => setShowFilters(true)}>
+              <span className="filter-btn-text">Filters</span>{" "}
+              <i className="eos-icons filter-btn-icon">filter_alt</i>
             </button>
           </div>
         ) : null}
@@ -173,7 +171,6 @@ const Navbar = ({ showFilters, setShowFilters }) => {
               type="radio"
               id="portrait"
               name="portrait"
-              style={{ marginLeft: "3.25rem" }}
               value="portrait"
               checked={isOrientationSelected("portrait")}
               onChange={handleOrientationChange}

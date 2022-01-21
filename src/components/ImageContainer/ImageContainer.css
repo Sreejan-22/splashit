@@ -55,9 +55,21 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .image-container-filters {
+    margin-top: 20rem;
+  }
+}
+
 @media screen and (max-width: 760px) {
   .image-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image-container-filters {
+    margin-top: 21rem;
   }
 }
 
