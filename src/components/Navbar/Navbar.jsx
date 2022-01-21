@@ -92,7 +92,10 @@ const Navbar = ({ showFilters, setShowFilters }) => {
         </form>
         {location.pathname.includes("/search") ? (
           <div className="nav-last-div">
-            <button className="filter-btn" onClick={() => setShowFilters(true)}>
+            <button
+              className="filter-btn"
+              onClick={() => setShowFilters(!showFilters)}
+            >
               <span className="filter-btn-text">Filters</span>{" "}
               <i className="eos-icons filter-btn-icon">filter_alt</i>
             </button>
