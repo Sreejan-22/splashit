@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import { getSearchParams } from "../../utils/getSearchParams";
 import unsplash from "../../assets/unsplash.png";
+import { ReactComponent as SearchIcon } from "../../assets/search.svg";
+import { ReactComponent as FilterIcon } from "../../assets/filter.svg";
 import "./Navbar.css";
 
 const Navbar = ({ showFilters, setShowFilters }) => {
@@ -86,9 +88,12 @@ const Navbar = ({ showFilters, setShowFilters }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <i className="eos-icons nav-search-icon" onClick={search}>
-            search
-          </i>
+          <SearchIcon
+            width="24px"
+            height="24px"
+            className="nav-search-icon"
+            color="rgb(85, 85, 85)"
+          />
         </form>
         {location.pathname.includes("/search") ? (
           <div className="nav-last-div">
@@ -97,7 +102,11 @@ const Navbar = ({ showFilters, setShowFilters }) => {
               onClick={() => setShowFilters(!showFilters)}
             >
               <span className="filter-btn-text">Filters</span>{" "}
-              <i className="eos-icons filter-btn-icon">filter_alt</i>
+              <FilterIcon
+                className="filter-btn-icon"
+                height="24px"
+                width="24px"
+              />
             </button>
           </div>
         ) : null}
