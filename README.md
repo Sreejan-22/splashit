@@ -1,5 +1,7 @@
 # splashit
 
+![screenshot](https://github.com/Sreejan-22/splashit/blob/master/splashit].png)
+
 Splashit is a photo search application built using React. Features include -
 
 - Explore photos
